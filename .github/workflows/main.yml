@@ -5,7 +5,8 @@ name: CI
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the dev branch
 on:
-  pull_request:
+  #change and test pull request actions
+  pull request:
     branches: [ version1 ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -39,4 +40,4 @@ jobs:
           aws s3 cp \
             --recursive \
             --region ap-northeast-2 \
-            build s3://don-forget-autobuild-test # 자신의 레포지토리로 변경해주세요.
+            build s3://don-forget # 자신의 레포지토리로 변경해주세요.
