@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - cd client
-      - npm install
+      - npm install --no -optional
 
   build:
     commands:
