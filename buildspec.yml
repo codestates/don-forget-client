@@ -3,14 +3,16 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - cd client && npm install
+      - cd client
+      - npm install
 
   build:
     commands:
+      - cd client
       - npm run build
 
 artifacts:
   files:
-    - './client/**/*'
+    - '**/*'
   discard-paths: no
-  base-directory: ./client/build
+  base-directory: build
