@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import "./mixin";
+
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body{
+  overflow-y:scroll;
+}
+
+@include desktop{
+/* 흰 배경 아래로 */
+.background{
+  position: fixed;
+  display: table;
+  width: 99.5%;
+  height: 90vh;
+  border-radius: 60px;
+  box-shadow: -5px -5px 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  z-index: 3;
+  top: 10vh;
+}
+/* 흰 배경 전체(로그인, 회원가입) */
+.fullBackground{
+  position: absolute;
+  display: table;
+  width: 99.9%;
+  height: 90vh;
+  border-radius: 60px;
+  box-shadow: -5px -5px 5px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  z-index: 1;
+  animation-name: fullBackground;
+  animation-duration: 8s;
+  left : 0.3%;
+}
+
+/* fullBackground animation*/
+@keyframes fullBackground{
+  0% { top : 12%; }
+  25% { top : 0.5%; }
+}
+
+/* 흰 배경 옆으로 */
+.sideBackground{
+  position: absolute;
+  display: table;
+  width: 94%;
+  height: 100vh;
+  border-radius: 60px;
+  // box-shadow: -5px -5px 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  z-index:3;
+  top: 0px;
+  left: 6%;
+  animation-name : sideBackground;
+  animation-duration: 8s;
+}
+
+/* sideBackground animation*/
+@keyframes sideBackground{
+  0% { left : 12%; }
+  25% { left : 6%; }
+}
+}
+
+/* page routing animation */
+/* .App{
+  position: relative;
+  animation-name: App;
+  animation-duration: 2s
+}
+@-webkit-keyframes App {
+  from { bottom:-50px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+@keyframes App { 
+  from{ bottom:-50px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+} */
+
+@include mobile {
+body{
+  overflow-y:scroll; 
+  overflow-x: scroll;
+}
+
+/* 흰 배경 아래로 */
+.background{
+  position: fixed;
+  display: table;
+  width: 99%;
+  height: 90vh;
+  border-radius: 0px;
+  background-color: #ffffff;
+  z-index: 3;
+  top: 10vh;
+}
+/* 흰 배경 전체(로그인, 회원가입) */
+.fullBackground{
+  position: absolute;
+  display: table;
+  width: 99.5%;
+  height: 90vh;
+  border-radius: 0px;
+  background-color: #ffffff;
+  z-index: 1;
+  animation-name: fullBackground;
+  animation-duration: 8s;
+  left : 0.3%;
+}
+
+/* fullBackground animation*/
+@keyframes fullBackground{
+  0% { top : 12%; }
+  25% { top : 1.2%; }
+}
+
+/* 흰 배경 옆으로 */
+.sideBackground{
+  position: absolute;
+  display: table;
+  width: 97%;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index:3;
+  top: 0px;
+  animation-name : sideBackground;
+  animation-duration: 8s;
+}
+
+/* sideBackground animation*/
+@keyframes sideBackground{
+  0% { top : 100%; }
+  25% { top : 0%; }
+}
+}
